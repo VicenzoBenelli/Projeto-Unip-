@@ -1,21 +1,19 @@
 # Saudação de boas-vindas ao sistema
-print("Bem-vindo à Livraria  do Vicenzo Benelli & Rafael Reginatto\n")
+print("\nBem-vindo à Livraria do Vicenzo Benelli & Rafael Reginatto\n")
 
 lista_livro = []
 id_global = 0
 
 # Função para cadastrar livro
-
 def cadastrar_livro(id):
-    print("-" * 38)
+    print("\n" + "-" * 38)
     print("-" * 8 + " MENU CADASTRAR LIVRO " + "-" * 8)
     print("-" * 38)
-    print(f"Id do livro: {id_global}")
+    print(f"Id do livro: {id}")
     nome = input("Por favor entre com o nome do livro: ")
     autor = input("Por favor entre com o autor do livro: ")
     editora = input("Por favor entre com a editora do livro: ")
 
-    # Dicionário que armazena as variáveis dos ids, nomes, autores e editoras dos livros
     livro = {
         "id": id,
         "nome": nome,
@@ -24,13 +22,12 @@ def cadastrar_livro(id):
     }
 
     lista_livro.append(livro)
-    print("----------------------------------------\n")
+    print("\nLivro cadastrado com sucesso!\n")
 
 # Função para consultar livros
-
 def consultar_livro():
     while True:
-        print("-" * 40)
+        print("\n" + "-" * 40)
         print("-" * 9 + " MENU CONSULTAR LIVRO " + "-" * 9)
         print("-" * 40)
         print("1 - Consultar Todos os Livros")
@@ -39,7 +36,8 @@ def consultar_livro():
         print("4 - Retornar")
         opcao = input(">> ")
 
-        if opcao == "1":  # Consulta de todos os livros
+        if opcao == "1":
+            print("\nLista de todos os livros:")
             for livro in lista_livro:
                 print("-" * 14)
                 print(f"id: {livro['id']}")
@@ -48,9 +46,9 @@ def consultar_livro():
                 print(f"editora: {livro['editora']}")
             print("--------------\n")
 
-        elif opcao == "2":  # Consulta por id do livro
+        elif opcao == "2":
             try:
-                id_consulta = int(input("Digite o ID do livro: "))
+                id_consulta = int(input("\nDigite o ID do livro: "))
                 for livro in lista_livro:
                     if livro["id"] == id_consulta:
                         print("-" * 14)
@@ -61,12 +59,12 @@ def consultar_livro():
                         print("--------------\n")
                         break
                 else:
-                    print("Livro não encontrado.\n")
+                    print("\nLivro não encontrado.\n")
             except ValueError:
-                print("Digite um número válido.\n")
+                print("\nDigite um número válido.\n")
 
-        elif opcao == "3":  # Consulta por autor do(s) livro(s)
-            autor_consulta = input("Digite o autor do(s) livro(s): ")
+        elif opcao == "3":
+            autor_consulta = input("\nDigite o autor do(s) livro(s): ")
             encontrou = False
             for livro in lista_livro:
                 if livro["autor"].lower() == autor_consulta.lower():
@@ -77,46 +75,43 @@ def consultar_livro():
                     print(f"autor: {livro['autor']}")
                     print(f"editora: {livro['editora']}")
             if not encontrou:
-                print("Autor não encontrado.\n")
+                print("\nAutor não encontrado.\n")
             print("--------------\n")
 
-        elif opcao == "4":  # Quebra do loop interno da função
+        elif opcao == "4":
             break
         else:
-            print("Opção inválida.\n")
+            print("\nOpção inválida.\n")
 
 # Função para remover livro
-
 def remover_livro():
-    print("-" * 40)
+    print("\n" + "-" * 40)
     print("-" * 10 + " MENU REMOVER LIVRO " + "-" * 10)
     print("-" * 40)
 
-    # Loop responsável pela identificação do ID do livro que será removido
     while True:
         try:
-            id_remover = int(input("Digite o ID do livro a ser removido: "))
+            id_remover = int(input("\nDigite o ID do livro a ser removido: "))
             for livro in lista_livro:
                 if livro["id"] == id_remover:
                     lista_livro.remove(livro)
-                    print("Livro removido com sucesso!\n")
+                    print("\nLivro removido com sucesso!\n")
                     return
-            print("ID inválido.\n")
+            print("\nID inválido.\n")
         except ValueError:
-            print("Digite um número válido.\n")
+            print("\nDigite um número válido.\n")
 
-            # Menu principal com as opções de cadastrar, consultar, remover e sair do sistema
+# Menu principal
 while True:
-    print("-" * 46)
+    print("\n" + "-" * 46)
     print("-" * 15 + " MENU PRINCIPAL " + "-" * 15)
-    print("Escolha a opção desejada:")
+    print("\nEscolha a opção desejada:")
     print("1 - Cadastrar Livro")
     print("2 - Consultar Livro(s)")
     print("3 - Remover Livro")
     print("4 - Sair")
     opcao_principal = input(">> ")
 
-    # Condicionais responsáveis por chamar as funções
     if opcao_principal == "1":
         id_global += 1
         cadastrar_livro(id_global)
@@ -125,6 +120,7 @@ while True:
     elif opcao_principal == "3":
         remover_livro()
     elif opcao_principal == "4":
+        print("\nSaindo do sistema...\n")
         break
     else:
-        print("Opção inválida.\n")
+        print("\nOpção inválida.\n")
