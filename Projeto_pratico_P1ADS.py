@@ -1,10 +1,10 @@
-# Saudação de boas-vindas ao sistema
+# Saudação de boas-vindas do sistema
 print("\nBem-vindo à Livraria do Vicenzo Benelli & Rafael Reginatto\n")
 
 lista_livro = []
 id_global = 0
 
-# Função para cadastrar livro
+# Função cadastrar livro
 def cadastrar_livro(id):
     print("\n" + "-" * 38)
     print("-" * 8 + " MENU CADASTRAR LIVRO " + "-" * 8)
@@ -24,7 +24,7 @@ def cadastrar_livro(id):
     lista_livro.append(livro)
     print("\nLivro cadastrado com sucesso!\n")
 
-# Função para consultar livros
+# Função consultar livros
 def consultar_livro():
     while True:
         print("\n" + "-" * 40)
@@ -83,7 +83,7 @@ def consultar_livro():
         else:
             print("\nOpção inválida.\n")
 
-# Função para remover livro
+# Função remover livro
 def remover_livro():
     print("\n" + "-" * 40)
     print("-" * 10 + " MENU REMOVER LIVRO " + "-" * 10)
@@ -101,7 +101,7 @@ def remover_livro():
         except ValueError:
             print("\nDigite um número válido.\n")
 
-# Menu principal
+# Menu principal do sistema
 while True:
     print("\n" + "-" * 46)
     print("-" * 15 + " MENU PRINCIPAL " + "-" * 15)
