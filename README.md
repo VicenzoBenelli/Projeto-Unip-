@@ -24,11 +24,11 @@ Cada livro recebe um ID único incremental (id_global), que é controlado fora d
 # Consulta de Livros
 O sistema de consulta oferece ao usuário três opções:
 
- 1- Listar todos os livros cadastrados
+ 1 - Listar todos os livros cadastrados
 
- 2- Consultar um livro específico por ID
+ 2 - Consultar um livro específico por ID
 
- 3- Consultar todos os livros de um determinado autor
+ 3 - Consultar todos os livros de um determinado autor
 
 A busca é realizada por meio de iteração sobre a lista de livros. Para garantir maior flexibilidade, a busca por autor é case-insensitive.
 
