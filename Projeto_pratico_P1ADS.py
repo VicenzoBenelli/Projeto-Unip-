@@ -84,3 +84,23 @@ def consultar_livro():
             break
         else:
             print("Opção inválida.\n")
+
+# Função para remover livro
+
+def remover_livro():
+    print("-" * 40)
+    print("-" * 10 + " MENU REMOVER LIVRO " + "-" * 10)
+    print("-" * 40)
+
+    # Loop responsável pela identificação do ID do livro que será removido
+    while True:
+        try:
+            id_remover = int(input("Digite o ID do livro a ser removido: "))
+            for livro in lista_livro:
+                if livro["id"] == id_remover:
+                    lista_livro.remove(livro)
+                    print("Livro removido com sucesso!\n")
+                    return
+            print("ID inválido.\n")
+        except ValueError:
+            print("Digite um número válido.\n")
