@@ -104,3 +104,27 @@ def remover_livro():
             print("ID inválido.\n")
         except ValueError:
             print("Digite um número válido.\n")
+
+            # Menu principal com as opções de cadastrar, consultar, remover e sair do sistema
+while True:
+    print("-" * 46)
+    print("-" * 15 + " MENU PRINCIPAL " + "-" * 15)
+    print("Escolha a opção desejada:")
+    print("1 - Cadastrar Livro")
+    print("2 - Consultar Livro(s)")
+    print("3 - Remover Livro")
+    print("4 - Sair")
+    opcao_principal = input(">> ")
+
+    # Condicionais responsáveis por chamar as funções
+    if opcao_principal == "1":
+        id_global += 1
+        cadastrar_livro(id_global)
+    elif opcao_principal == "2":
+        consultar_livro()
+    elif opcao_principal == "3":
+        remover_livro()
+    elif opcao_principal == "4":
+        break
+    else:
+        print("Opção inválida.\n")
